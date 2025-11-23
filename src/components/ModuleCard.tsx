@@ -1,26 +1,3 @@
-import { ReactNode } from "react";
-import { cn } from "@/lib/utils";
-
-interface ModuleCardProps {
-  children: ReactNode;
-  className?: string;
-  variant?: "default" | "ocean" | "coral";
-}
-
-export const ModuleCard = ({ children, className, variant = "default" }: ModuleCardProps) => {
-  const variants = {
-    default: "bg-card",
-    ocean: "ocean-gradient",
-    coral: "coral-gradient"
-  };
-  
-  return (
-    <div className={cn(
-      "rounded-3xl p-8 shadow-card transition-smooth hover:shadow-ocean",
-      variants[variant],
-      className
-    )}>
-      {children}
-    </div>
-  );
-};
+version https://git-lfs.github.com/spec/v1
+oid sha256:b8020b6f5c0479567c7ccbb7bfe54123b32357494e39861f3f0cabb9c2a593d5
+size 588

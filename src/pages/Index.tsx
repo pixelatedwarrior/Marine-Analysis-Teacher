@@ -1,14 +1,3 @@
-// Update this page (the content is just a fallback if you fail to update the page)
-
-const Index = () => {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
-};
-
-export default Index;
+version https://git-lfs.github.com/spec/v1
+oid sha256:17e908fc1c2d6bfd4bdf9c48745d7cb77724230797afaf10db9399b07fd2316c
+size 469

@@ -1,19 +1,3 @@
-import * as React from "react";
-
-const MOBILE_BREAKPOINT = 768;
-
-export function useIsMobile() {
-  const [isMobile, setIsMobile] = React.useState<boolean | undefined>(undefined);
-
-  React.useEffect(() => {
-    const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`);
-    const onChange = () => {
-      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
-    };
-    mql.addEventListener("change", onChange);
-    setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
-    return () => mql.removeEventListener("change", onChange);
-  }, []);
-
-  return !!isMobile;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:21eff740f9e5c965c7f0782925a7e8f67ddfcdf0f58b6613550f99c3e1c454e9
+size 576
