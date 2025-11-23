@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Ocean-themed color palette */
+    --background: 195 100% 97%;
+    --foreground: 210 85% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 85% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 85% 15%;
+
+    /* Deep ocean blue for primary actions */
+    --primary: 210 80% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Soft sand/beach tone */
+    --secondary: 45 85% 75%;
+    --secondary-foreground: 35 65% 25%;
+
+    /* Light ocean mist */
+    --muted: 195 50% 92%;
+    --muted-foreground: 210 25% 45%;
+
+    /* Bright coral for accents */
+    --accent: 15 90% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 195 40% 85%;
+    --input: 195 40% 95%;
+    --ring: 210 80% 50%;
+
+    --radius: 1rem;
+    
+    /* Custom ocean theme colors */
+    --ocean-deep: 210 85% 25%;
+    --ocean-medium: 200 75% 45%;
+    --ocean-light: 195 65% 65%;
+    --teal: 175 70% 50%;
+    --sand: 45 85% 75%;
+    --coral: 15 90% 60%;
+    --seaweed: 140 50% 45%;
+    --bubble: 195 100% 95%;
+    
+    /* Gradients */
+    --gradient-ocean: linear-gradient(180deg, hsl(195, 75%, 85%) 0%, hsl(210, 80%, 45%) 100%);
+    --gradient-beach: linear-gradient(180deg, hsl(45, 100%, 88%) 0%, hsl(45, 85%, 75%) 100%);
+    --gradient-coral: linear-gradient(135deg, hsl(15, 90%, 60%) 0%, hsl(340, 85%, 65%) 100%);
+    
+    /* Shadows for depth */
+    --shadow-ocean: 0 10px 40px -10px hsl(210, 80%, 35% / 0.3);
+    --shadow-float: 0 4px 20px -4px hsl(195, 60%, 50% / 0.25);
+    --shadow-card: 0 2px 15px -3px hsl(210, 40%, 60% / 0.15);
+    
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Deep ocean night theme */
+    --background: 215 45% 12%;
+    --foreground: 195 80% 92%;
+
+    --card: 215 40% 16%;
+    --card-foreground: 195 80% 92%;
+
+    --popover: 215 40% 16%;
+    --popover-foreground: 195 80% 92%;
+
+    --primary: 195 75% 55%;
+    --primary-foreground: 215 45% 12%;
+
+    --secondary: 45 70% 60%;
+    --secondary-foreground: 215 45% 12%;
+
+    --muted: 215 35% 20%;
+    --muted-foreground: 195 30% 65%;
+
+    --accent: 15 85% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 30% 25%;
+    --input: 215 30% 22%;
+    --ring: 195 75% 55%;
+    
+    --ocean-deep: 215 70% 15%;
+    --ocean-medium: 200 60% 35%;
+    --ocean-light: 195 55% 50%;
+    --teal: 175 60% 45%;
+    --sand: 45 70% 60%;
+    --coral: 15 85% 55%;
+    --seaweed: 140 45% 40%;
+    --bubble: 195 80% 85%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+@layer utilities {
+  .ocean-gradient {
+    background: var(--gradient-ocean);
+  }
+  
+  .beach-gradient {
+    background: var(--gradient-beach);
+  }
+  
+  .coral-gradient {
+    background: var(--gradient-coral);
+  }
+  
+  .shadow-ocean {
+    box-shadow: var(--shadow-ocean);
+  }
+  
+  .shadow-float {
+    box-shadow: var(--shadow-float);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  .wave-animation {
+    animation: wave 3s ease-in-out infinite;
+  }
+  
+  .float-animation {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  .bubble-float {
+    animation: bubbleFloat 6s ease-in-out infinite;
+  }
+  
+  @keyframes wave {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  @keyframes bubbleFloat {
+    0% { transform: translateY(0) scale(1); opacity: 0.6; }
+    50% { transform: translateY(-40px) scale(1.1); opacity: 0.8; }
+    100% { transform: translateY(-80px) scale(0.9); opacity: 0; }
+  }
+}
